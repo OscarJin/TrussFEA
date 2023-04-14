@@ -218,7 +218,7 @@ Node	Direction	Counterforce/N
 1	x	-60000.0000
 1	y	15000.0000
 5	y	75000.0000
-Element	Strain/m	Stress/N
+Element	Strain	Stress/Pa
 1	0.0000	0.0000
 2	-0.1056	-226805610.2059
 3	-0.1056	-226795793.9060

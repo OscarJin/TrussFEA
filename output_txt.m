@@ -22,7 +22,7 @@ for i=1:length(R)
 end
 
 % output strain and stress
-fprintf(fid, 'Element\tStrain/m\tStress/N\n');
+fprintf(fid, 'Element\tStrain\tStress/Pa\n');
 for i=1:length(strain)
     fprintf(fid, '%d\t%.4f\t%.4f\n', i,strain(i),stress(i));
 end
