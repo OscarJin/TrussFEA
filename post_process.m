@@ -19,7 +19,7 @@ for i=1:Nelem
     L = sqrt(dx*dx + dy*dy);
     Cos = dx/L;
     Sin = dy/L;
-    strain(i) = (u(node2*1-1) - u(node1*2-1)) * Cos + (u(node2*1) - u(node1*2)) * Sin;
+    strain(i) = (u(node2*2-1) - u(node1*2-1)) * Cos + (u(node2*2) - u(node1*2)) * Sin;
     strain(i) = strain(i)/L;
 end
 
