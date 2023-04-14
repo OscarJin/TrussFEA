@@ -9,11 +9,11 @@ for i=1:Nelem
 end
 
 %建立整体刚度方程
-KK=zeros(Nnode*2,Nnode*2);
+KK=zeros(Nnode*2);
 for i=1:Nelem
     node1=elements(i,1);
     node2=elements(i,2);
-    KK=Bar2D_Assembly (KK,k(:,:,i),node1,node2);
+    KK=Bar2D_Assembly(KK,k(:,:,i),node1,node2);
 end
 
 %边界条件的处理及刚度方程求解
