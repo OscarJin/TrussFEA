@@ -194,7 +194,7 @@ function plot_result(nodes,Nnode,elements,Nelem,u)
 
 Plot original (un-deformed) and deformed shapes.
 
-<img src="output.png" style="zoom:40%;" />
+<img src="output.png" style="zoom:30%;" />
 
 ```matlab
 function output_txt(output_filename,u,R,strain,stress)
