@@ -1,6 +1,6 @@
 function z = Bar2D_Assembly(KK,k,i,j)
-%Bar2D_Assembly Assemble element stiffness matrics
-%   input element stiffness matrix k，node no. i,j of the element
+%Bar2D_Assembly Assemble element stiffness matrices
+%   input element stiffness matrix k，nodes no. i, j of the element
 %   output assembled stiffness matrix
 
 DOF(1)=2*i-1;

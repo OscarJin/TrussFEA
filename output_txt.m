@@ -1,12 +1,12 @@
-function output_txt(filename,u,R,strain,stress)
+function output_txt(output_filename,u,R,strain,stress)
 %OUTPUT_TXT Output results to a txt file
 %   Output node displacements, counterforces, element strains and stresses
-fid = fopen(filename,'w');
+fid = fopen(output_filename,'w');
 
 % output u
-fprintf(fid, 'Node\tu/m\n');
-for i=1:length(u)
-    fprintf(fid, '%d\t%.4f\n', i, u(i));
+fprintf(fid, 'Node\tux/m\tuy/m\n');
+for i=1:length(u)/2
+    fprintf(fid, '%d\t%.4f\t%.4f\n', i, u(i*2-1), u(i*2));
 end
 
 % output R

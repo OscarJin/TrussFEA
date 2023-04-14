@@ -3,11 +3,11 @@ function [E,A,nodes,Nnode,elements,Nelem,bcs,Nbc,loads] = read_input(input_filen
 %   E, Young's modulus of the material
 %   A, section area of the truss
 %   Nnode, number of nodes
-%   nodes, a Nnode*2 matrix of x and y coordiates of nodes
+%   nodes, a Nnode*2 matrix of x and y coordinates of nodes
 %   Nelem. number of elements
 %   elements, a Nelem*2 matrix of elements between two nodes
 %   Nbc, number of boundary conditions
-%   bcs, a Nbc*2 matrix of boudary conditions (nodes, directions)
+%   bcs, a Nbc*2 matrix of boundary conditions (nodes, directions)
 %   loads, a (Nnode*2)*1 matrix of loads
 fid = fopen(input_filename, 'r');
 
