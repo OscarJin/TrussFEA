@@ -6,4 +6,7 @@ clear;
 
 [R,strain,stress]=post_process(E,nodes,elements,Nelem,bcs,Nbc,u,C);
 
-save('result.mat','u','R','strain','stress');
+% save('result.mat','u','R','strain','stress');
+output_txt('output.txt',u,R,strain,stress);
+
+plot_result(nodes,Nnode,elements,Nelem,u);
