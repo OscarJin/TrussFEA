@@ -1,5 +1,5 @@
 function [u,C] = SolveBarFEM(E,A,nodes,Nnode,elements,Nelem,bcs,Nbc,loads)
-%SOLVEBARFEM 求解节点位移
+%SOLVEBARFEM Solve node displacement
 
 k=zeros(4,4,Nelem);
 for i=1:Nelem
@@ -8,7 +8,7 @@ for i=1:Nelem
     k(:,:,i)=Bar2D_Stiffness(E,A,nodes(node1,1),nodes(node1,2),nodes(node2,1),nodes(node2,2));
 end
 
-%建立整体刚度方程
+% Assemble k's to KK
 KK=zeros(Nnode*2);
 for i=1:Nelem
     node1=elements(i,1);
@@ -16,7 +16,7 @@ for i=1:Nelem
     KK=Bar2D_Assembly(KK,k(:,:,i),node1,node2);
 end
 
-%边界条件的处理及刚度方程求解
+% Boundary conditions
 C=max(max(KK))*1e4;
 for i=1:Nbc
     bc=bcs(i,1)*2+bcs(i,2)-2;

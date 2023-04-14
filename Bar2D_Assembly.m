@@ -1,7 +1,7 @@
 function z = Bar2D_Assembly(KK,k,i,j)
-%Bar2D_Assembly 进行单元刚度矩阵的组装
-%   输入单元刚度矩阵k，单元的节点编号i，j
-%   输出整体刚度矩阵KK
+%Bar2D_Assembly Assemble element stiffness matrics
+%   input element stiffness matrix k，node no. i,j of the element
+%   output assembled stiffness matrix
 
 DOF(1)=2*i-1;
 DOF(2)=2*i;

@@ -1,27 +1,35 @@
 function [E,A,nodes,Nnode,elements,Nelem,bcs,Nbc,loads] = read_input(input_filename)
-%READ_INPUT 从文本文件读取输入数据并返回相应的数据矩阵
-%   E，材料模量，A杆横截面积，xs，节点x坐标，ys，节点y坐标
+%READ_INPUT Read input data from a file
+%   E, Young's modulus of the material
+%   A, section area of the truss
+%   Nnode, number of nodes
+%   nodes, a Nnode*2 matrix of x and y coordiates of nodes
+%   Nelem. number of elements
+%   elements, a Nelem*2 matrix of elements between two nodes
+%   Nbc, number of boundary conditions
+%   bcs, a Nbc*2 matrix of boudary conditions (nodes, directions)
+%   loads, a (Nnode*2)*1 matrix of loads
 fid = fopen(input_filename, 'r');
 
-% 读取材料属性和杆直径
+% Read material property and diameter of truss
 E=fscanf(fid, '%d',1);
 d=fscanf(fid, '%f',1);
 A=pi*(d/2)^2;
 
-% 读取节点和单元数量
+% Read Nnode and Nelem
 Nnode=fscanf(fid, '%d',1);
 Nelem=fscanf(fid, '%d',1);
 
-% 读取节点坐标
+% Read nodes
 nodes = fscanf(fid, '%f %f', [2, Nnode])';
-% 读取单元两端节点编号
+% Read elements
 elements = fscanf(fid, '%d %d', [2, Nelem])';
 
-% 读取边界条件
+% Read BCs
 Nbc = fscanf(fid, '%d', 1);
 bcs = fscanf(fid, '%d %d', [2, Nbc])';
 
-% 读取载荷数据
+% Read loads
 loads = fscanf(fid, '%f', [1, Nnode*2])';
 
 fclose(fid);

@@ -1,8 +1,8 @@
 function k = Bar2D_Stiffness(E,A,x1,y1,x2,y2)
-%Bar2D_Stiffness 计算单元的刚度矩阵
-%   输入弹性模量E，横截面积A
-%   输入第一个节点坐标（x1,y1），第二个节点坐标（x2,y2）
-%   输出单元刚度矩阵k(4x4)
+%Bar2D_Stiffness Calculate stiffness matrix of an element
+%   input E,A
+%   input coordinates of two nodes (x1, y1), (x2, y2)
+%   output stiffness matrix (4x4) of the element
 
 dx = x2-x1;
 dy = y2-y1;

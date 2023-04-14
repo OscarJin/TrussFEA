@@ -1,7 +1,7 @@
 function [R,strain,stress] = post_process(E,nodes,elements,Nelem,bcs,Nbc,u,C)
-%POST_PROCESS 后处理
+%POST_PROCESS 
 
-% 计算反作用力
+% Calculate counterforce
 R=zeros(Nbc, 2);
 for i=1:Nbc
     bc=bcs(i,1)*2+bcs(i,2)-2;

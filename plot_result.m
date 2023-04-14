@@ -1,13 +1,13 @@
 function plot_result(nodes,Nnode,elements,Nelem,u)
-%PLOT_RESULT 输出图形
-%   变形前，变形后的图形
+%PLOT_RESULT Output shape
+%   Original (undeformed) and deformed shapes
 
 nodes_u = zeros(Nnode,2);
 for i = 1:Nnode
     nodes_u(i,1) = nodes(i,1) + u(2*i-1,1);
     nodes_u(i,2) = nodes(i,2) + u(2*i,1);
 end
-% 邻接矩阵
+% Adjacent matrix
 A = zeros(Nnode);
 for i = 1:Nelem
     node1=elements(i,1);
@@ -16,9 +16,9 @@ for i = 1:Nelem
     A(node2, node1) = 1;
 end
 
-gplot(A,nodes,'bo-');   %画变形前的图
+gplot(A,nodes,'bo-');   % plot undeformed
 hold on
-gplot(A,nodes_u,'ro-');%变形后的图
+gplot(A,nodes_u,'ro-'); % plot deformed
 hold off
 
 xlabel('x (m)','FontName','Times New Roman','FontSize',16);
