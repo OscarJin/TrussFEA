@@ -1,9 +1,17 @@
-# TrussFEA
+# Truss Finite Element Analysis (TrussFEA)
 The program can do finite element analysis of planar two-nodes truss structures.
 
 To start with, input a txt file to define the geometry, material and boundary conditions of the structure. The solver in the program will output the nodal displacements, counterforces, strain and stress of elements. Also, we can plot the un-deformed and deformed shapes of the structure.
 
 ## Tutorial
+
+### Setup
+
+If one wants to start using the software, run the `setup.m` first.
+
+Open MATLAB and run the `setup.m`, it will add all library functions to MATLAB path and add the example.
+
+<u><i>Note:</i></u> SETUP file to be run only the first time
 
 ### Prepare an input file
 
@@ -194,7 +202,7 @@ function plot_result(nodes,Nnode,elements,Nelem,u)
 
 Plot original (un-deformed) and deformed shapes.
 
-<img src="output.png" style="zoom:30%;" />
+<img src="Example/output.png" style="zoom:30%;" />
 
 ```matlab
 function output_txt(output_filename,u,R,strain,stress)
