@@ -16,7 +16,7 @@ To solve a truss structure, first prepare an input txt file according to a speci
 - All trusses in the structure use the same material and have a circular cross section, so only the diameter needs to be defined. If more diverse materials and cross sections are desired, just fork the repository and develop by yourself.
 - Loads are exerted on nodes. For distributed loads, need to convert them to nodal loads first.
 
-The first line defines the Young's modulus of the material (unit: GPa).
+The first line defines the Young's modulus of the material (**unit: GPa**).
 
 The second line defines the diameter of the cross section (unit: m).
 
@@ -130,7 +130,7 @@ Read data from the file `input_filename`
 
 | Outputs    | Meanings                                                    |
 | ---------- | ----------------------------------------------------------- |
-| `E`        | Young's modulus of the material                             |
+| `E`        | Young's modulus of the material （unit: Pa)                 |
 | `A`        | Cross section area of the trusses                           |
 | `Nnode`    | Number of nodes                                             |
 | `nodes`    | a `Nnode*2` matrix of x and y coordinates of nodes          |
