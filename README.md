@@ -11,18 +11,18 @@ To solve a truss structure, first prepare an input txt file according to a speci
 
 <u><i>Note:</i></u> 
 
-- All input should be in SI units (m, kg, s)
+- All inputs should be in SI units.
 - Suppose each node has two DOFs, namely x and y. The positive directions of x and y are rightward and upward respectively.
 - All trusses in the structure use the same material and have a circular cross section, so only the diameter needs to be defined. If more diverse materials and cross sections are desired, just fork the repository and develop by yourself.
 - Loads are exerted on nodes. For distributed loads, need to convert them to nodal loads first.
 
-The first line defines the Young's modulus of the material.
+The first line defines the Young's modulus of the material (unit: GPa).
 
-The second line defines the diameter of the cross section.
+The second line defines the diameter of the cross section (unit: m).
 
 The third line defines the number of nodes (`Nnode`) and elements (`Nelem`).
 
-For the next `Nnode` lines, each line has two numbers to define the x and y coordinates of each node.
+For the next `Nnode` lines, each line has two numbers to define the x and y coordinates of each node (unit: m).
 
 Then for the next `Nelem` lines, each line has two numbers $i$ and $j$ to define the element linked by two nodes numbered $i$ and $j$.
 
@@ -32,7 +32,7 @@ There is a line containing the number of boundary conditions `Nbc`.
 
 For the next `Nbc` lines, each line has two numbers $i$ and $j$, indicated the $j$ direction (1 for x, 2 for y) of node $i$ is constrained.
 
-Finally, there are `Nnode`$\times 2$ lines to define the loads (since each node has two DOFs).
+Finally, there are `Nnode`$\times 2$ lines to define the loads (since each node has two DOFs, unit: N).
 
 Here is an example.
 
@@ -43,7 +43,7 @@ The truss structure with cylindrical members with diameter d=20mm combined by pi
 The input file of the example `input.txt` can be written as:
 
 ```
-70000000000	//Young's modulus
+70		//Young's modulus
 0.02	//diameter
 8 13	//number of nodes adn elements
 0 0
@@ -206,31 +206,31 @@ The output format will look like:
 
 ```
 Node	ux/m	uy/m
-1	0.0000	-0.0000
-2	0.3168	-1.1307
-3	0.6337	-1.7861
-4	0.8838	-1.5494
-5	1.1339	-0.0000
-6	0.5423	-1.3123
-7	0.9091	-1.7861
-8	1.2760	-1.1307
+1	0.000000	-0.000000
+2	0.009720	-0.034687
+3	0.019440	-0.054795
+4	0.027114	-0.047534
+5	0.034787	-0.000000
+6	0.016636	-0.040258
+7	0.027890	-0.054795
+8	0.039145	-0.034687
 Node	Direction	Counterforce/N
-1	x	-60000.0000
-1	y	15000.0000
-5	y	75000.0000
+1	x	-60000.000000
+1	y	15000.000000
+5	y	75000.000000
 Element	Strain	Stress/Pa
-1	0.1056	226795793.9060
-2	0.1056	226795793.9060
-3	0.0834	179049310.9784
-4	0.0834	179049310.9784
-5	-0.0278	-59683103.6595
-6	-0.0000	-0.0000
-7	0.0278	59683103.6595
-8	-0.0000	-0.0000
-9	0.0648	139260575.2054
-10	0.0593	127323954.4735
-11	-0.1390	-298415518.2973
-12	-0.1223	-262605656.1016
-13	-0.1223	-262605656.1016
+1	0.003240	226795793.905951
+2	0.003240	226795793.905951
+3	0.002558	179049310.978382
+4	0.002558	179049310.978383
+5	-0.000853	-59683103.659461
+6	0.000000	0.000000
+7	0.000853	59683103.659461
+8	-0.000000	-0.000000
+9	0.001989	139260575.205409
+10	0.001819	127323954.473516
+11	-0.004263	-298415518.297305
+12	-0.003752	-262605656.101628
+13	-0.003752	-262605656.101628
 ```
 

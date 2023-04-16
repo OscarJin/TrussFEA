@@ -13,6 +13,7 @@ fid = fopen(input_filename, 'r');
 
 % Read material property and diameter of truss
 E=fscanf(fid, '%d',1);
+E=E*1e9;
 d=fscanf(fid, '%f',1);
 A=pi*(d/2)^2;
 
